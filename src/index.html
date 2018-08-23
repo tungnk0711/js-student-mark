@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Calculate() {
+            var txtDiemVatLy = document.getElementById('diemVatLy').value;
+            var txtDiemHoaHoc = document.getElementById('diemHoaHoc').value;
+            var txtDiemSinhHoc = document.getElementById('diemSinhHoc').value;
+
+            var avg = (eval(txtDiemVatLy) + eval(txtDiemHoaHoc) + eval(txtDiemSinhHoc)) / 3;
+            var sum = eval(txtDiemVatLy) + eval(txtDiemHoaHoc) + eval(txtDiemSinhHoc);
+
+            var lblDiemTrungBinh = document.getElementById('diemTrungBinh');
+            lblDiemTrungBinh.innerHTML = avg.toString();
+
+            var lblTongDiem = document.getElementById('tongDiem');
+            lblTongDiem.innerHTML = sum.toString();
+        }
+
+    </script>
+</head>
+<body>
+<h2>Chương trình quản lý điểm học viên</h2>
+
+Điểm Vật lý: <input type="text" id="diemVatLy" name="diemVatLy">
+Điểm Hoá Học <input type="text" id="diemHoaHoc" name="diemHoaHoc">
+Điểm Sinh Học <input type="text" id="diemSinhHoc" name="diemSinhHoc">
+
+<button type="button" onclick="Calculate()">Tính điểm</button>
+
+Điểm trung bình : <label id="diemTrungBinh"></label>
+Tổng điểm: <label id="tongDiem"></label>
+
+</body>
+</html>
